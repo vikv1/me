@@ -35,8 +35,8 @@ layout: default
   .home-content h1,
   .home-wrapper h2 {
     font-family: inherit;
-    font-weight: 700;              /* ← ensures bold */
-    font-size: 1.4rem;             /* ← smaller font but still header */
+    font-weight: 700; /* ← ensures bold */
+    font-size: 1.4rem; /* ← smaller font but still header */
     margin-bottom: 1rem;
     line-height: 1.3;
   }
@@ -97,13 +97,41 @@ layout: default
       max-width: 100%;
     }
   }
+
+  .home-columns {
+    display: flex;
+    gap: 3rem;
+    justify-content: space-between;
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    flex-wrap: wrap;
+  }
+
+  .home-blog,
+  .home-projects {
+    flex: 1 1 45%;
+  }
+
+  @media (max-width: 768px) {
+    .home-columns {
+      flex-direction: column;
+    }
+
+    .home-blog,
+    .home-projects {
+      flex: 1 1 100%;
+    }
+  }
 </style>
 
-
-<div class="home-wrapper">
+<div class="home-wrapper" style="margin-bottom: 1px">
   <div class="home-container">
     <div class="home-photo">
-      <img src="{{ site.baseurl }}/assets/images/aura.png" alt="Photo of Vikrant Verma" />
+      <img
+        src="{{ site.baseurl }}/assets/images/aura.png"
+        alt="Photo of Vikrant Verma"
+      />
     </div>
 
     <div class="home-content">
@@ -112,13 +140,26 @@ layout: default
       <p>Hello, my name is Vik! I enjoy thinking about things.</p>
 
       <p>
-        I’m working on implementing portfolio optimization using Markwotiz's modern portfolio theory! Here's some other stuff:
+        I’m working on implementing portfolio optimization using Markwotiz's
+        modern portfolio theory! Here's some other stuff:
       </p>
 
       <ul>
-        <li><a href="{{ site.baseurl }}/academics/2025/06/15/lin_alg_1">Self Studying Linear Algebra</a></li>
-        <li><a href="{{ site.baseurl }}/career/reflections/2025/06/13/capital_one">Interning at Capital One</a></li>
-        <li><a href="{{ site.baseurl }}/general/reflections/2025/06/13/acting">On Acting</a></li>
+        <li>
+          <a href="{{ site.baseurl }}/academics/2025/06/15/lin_alg_1"
+            >Self Studying Linear Algebra</a
+          >
+        </li>
+        <li>
+          <a href="{{ site.baseurl }}/career/reflections/2025/06/13/capital_one"
+            >Interning at Capital One</a
+          >
+        </li>
+        <li>
+          <a href="{{ site.baseurl }}/general/reflections/2025/06/13/acting"
+            >On Acting</a
+          >
+        </li>
       </ul>
 
       <p>
@@ -132,26 +173,56 @@ layout: default
       </form> -->
     </div>
   </div>
-
   <hr />
+</div>
 
-  <div>
-    <h2>blog</h2>
-    <p>
-      all about me + random thoughts
-    </p>
-
-    <ul style="list-style: none; padding-left: 0; margin: 0;">
+<div class="home-wrapper" style="margin-top: 1px">
+  <div class="home-columns">
+    <div class="home-blog">
+      <h2>blog</h2>
+      <ul style="list-style: none; padding-left: 0; margin: 0">
         {% for post in site.posts %}
-        <li style="margin-bottom: 0.8rem;">
-        <div style="line-height: 1.2;">
-            <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> – {{ post.date | date: "%B %-d, %Y" }}
-            <div style="color: gray; font-style: italic; font-size: 0.85rem; margin-top: 1px;">
-            {{ post.blurb | strip_html | truncate: 120 }}
+        <li style="margin-bottom: 0.8rem">
+          <div style="line-height: 1.2">
+            <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> – {{
+            post.date | date: "%B %-d, %Y" }}
+            <div
+              style="
+                color: gray;
+                font-style: italic;
+                font-size: 0.85rem;
+                margin-top: 1px;
+              "
+            >
+              {{ post.blurb | strip_html | truncate: 120 }}
             </div>
-        </div>
+          </div>
         </li>
         {% endfor %}
-    </ul>
+      </ul>
+    </div>
+
+    <div class="home-projects">
+      <h2>projects</h2>
+      <ul style="list-style: none; padding-left: 0; margin: 0">
+        {% for proj in site.projects %}
+        <li style="margin-bottom: 0.8rem">
+          <div style="line-height: 1.2">
+            <a href="{{ proj.link }}"> {{ proj.name }} - ({{ proj.status }})</a>
+            <div
+              style="
+                color: gray;
+                font-style: italic;
+                font-size: 0.85rem;
+                margin-top: 1px;
+              "
+            >
+              {{ proj.blurb | strip_html | truncate: 120 }}
+            </div>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
   </div>
 </div>
