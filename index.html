@@ -153,8 +153,8 @@
   .home-content h1,
   .home-wrapper h2 {
     font-family: inherit;
-    font-weight: 700;              /* ← ensures bold */
-    font-size: 1.4rem;             /* ← smaller font but still header */
+    font-weight: 700; /* ← ensures bold */
+    font-size: 1.4rem; /* ← smaller font but still header */
     margin-bottom: 1rem;
     line-height: 1.3;
   }
@@ -215,10 +215,35 @@
       max-width: 100%;
     }
   }
+
+  .home-columns {
+    display: flex;
+    gap: 3rem;
+    justify-content: space-between;
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    flex-wrap: wrap;
+  }
+
+  .home-blog,
+  .home-projects {
+    flex: 1 1 45%;
+  }
+
+  @media (max-width: 768px) {
+    .home-columns {
+      flex-direction: column;
+    }
+
+    .home-blog,
+    .home-projects {
+      flex: 1 1 100%;
+    }
+  }
 </style>
 
-
-<div class="home-wrapper">
+<div class="home-wrapper" style="margin-bottom: 1px">
   <div class="home-container">
     <div class="home-photo">
       <img src="/assets/images/aura.png" alt="Photo of Vikrant Verma">
@@ -230,13 +255,20 @@
       <p>Hello, my name is Vik! I enjoy thinking about things.</p>
 
       <p>
-        I’m working on implementing portfolio optimization using Markwotiz's modern portfolio theory! Here's some other stuff:
+        I’m working on implementing portfolio optimization using Markwotiz's
+        modern portfolio theory! Here's some other stuff:
       </p>
 
       <ul>
-        <li><a href="/academics/2025/06/15/lin_alg_1">Self Studying Linear Algebra</a></li>
-        <li><a href="/career/reflections/2025/06/13/capital_one">Interning at Capital One</a></li>
-        <li><a href="/general/reflections/2025/06/13/acting">On Acting</a></li>
+        <li>
+          <a href="/academics/2025/06/15/lin_alg_1">Self Studying Linear Algebra</a>
+        </li>
+        <li>
+          <a href="/career/reflections/2025/06/13/capital_one">Interning at Capital One</a>
+        </li>
+        <li>
+          <a href="/general/reflections/2025/06/13/acting">On Acting</a>
+        </li>
       </ul>
 
       <p>
@@ -250,45 +282,178 @@
       </form> -->
     </div>
   </div>
-
   <hr>
+</div>
 
-  <div>
-    <h2>blog</h2>
-    <p>
-      all about me + random thoughts
-    </p>
-
-    <ul style="list-style: none; padding-left: 0; margin: 0;">
+<div class="home-wrapper" style="margin-top: 1px">
+  <div class="home-columns">
+    <div class="home-blog">
+      <h2>blog</h2>
+      <ul style="list-style: none; padding-left: 0; margin: 0">
         
-        <li style="margin-bottom: 0.8rem;">
-        <div style="line-height: 1.2;">
+        <li style="margin-bottom: 0.8rem">
+          <div style="line-height: 1.2">
             <a href="/academics/2025/06/15/lin_alg_1/">Self Studying Linear Algebra</a> – June 15, 2025
-            <div style="color: gray; font-style: italic; font-size: 0.85rem; margin-top: 1px;">
-            mit 18.06 thoughts
+            <div style="
+                color: gray;
+                font-style: italic;
+                font-size: 0.85rem;
+                margin-top: 1px;
+              ">
+              mit 18.06 thoughts
             </div>
-        </div>
+          </div>
         </li>
         
-        <li style="margin-bottom: 0.8rem;">
-        <div style="line-height: 1.2;">
+        <li style="margin-bottom: 0.8rem">
+          <div style="line-height: 1.2">
             <a href="/career/reflections/2025/06/13/capital_one/">Interning at Capital One</a> – June 13, 2025
-            <div style="color: gray; font-style: italic; font-size: 0.85rem; margin-top: 1px;">
-            first big industry experience
+            <div style="
+                color: gray;
+                font-style: italic;
+                font-size: 0.85rem;
+                margin-top: 1px;
+              ">
+              first big industry experience
             </div>
-        </div>
+          </div>
         </li>
         
-        <li style="margin-bottom: 0.8rem;">
-        <div style="line-height: 1.2;">
+        <li style="margin-bottom: 0.8rem">
+          <div style="line-height: 1.2">
             <a href="/general/reflections/2025/06/13/acting/">On Acting</a> – June 13, 2025
-            <div style="color: gray; font-style: italic; font-size: 0.85rem; margin-top: 1px;">
-            a venture so far out of my comfort zone i needed a sherpa
+            <div style="
+                color: gray;
+                font-style: italic;
+                font-size: 0.85rem;
+                margin-top: 1px;
+              ">
+              a venture so far out of my comfort zone i needed a sherpa
             </div>
-        </div>
+          </div>
         </li>
         
-    </ul>
+      </ul>
+    </div>
+
+    <div class="home-projects">
+      <h2>projects</h2>
+      <ul style="list-style: none; padding-left: 0; margin: 0">
+        
+        <li style="margin-bottom: 0.8rem">
+          <div style="line-height: 1.2">
+            <a href="https://www.tryluminent.com"> Luminent - (In progress)</a>
+            <div style="
+                color: gray;
+                font-style: italic;
+                font-size: 0.85rem;
+                margin-top: 1px;
+              ">
+              anyone can deploy ML at scale
+            </div>
+          </div>
+        </li>
+        
+        <li style="margin-bottom: 0.8rem">
+          <div style="line-height: 1.2">
+            <a href=""> Portfolio Optimization - (In progress)</a>
+            <div style="
+                color: gray;
+                font-style: italic;
+                font-size: 0.85rem;
+                margin-top: 1px;
+              ">
+              learning project because I want to do more math-y things
+            </div>
+          </div>
+        </li>
+        
+        <li style="margin-bottom: 0.8rem">
+          <div style="line-height: 1.2">
+            <a href="https://github.com/vikv1/dna-motif-finder"> DNA Motif scanner - (done)</a>
+            <div style="
+                color: gray;
+                font-style: italic;
+                font-size: 0.85rem;
+                margin-top: 1px;
+              ">
+              find motifs in DNA, could be useful for finding sequence specific binding sites
+            </div>
+          </div>
+        </li>
+        
+        <li style="margin-bottom: 0.8rem">
+          <div style="line-height: 1.2">
+            <a href="https://github.com/vikv1/Vibe-Diagrammer"> Vibe Diagrammer (for Excalidraw) - (done)</a>
+            <div style="
+                color: gray;
+                font-style: italic;
+                font-size: 0.85rem;
+                margin-top: 1px;
+              ">
+              added a new feature to a new codebase in &lt; 1.5hrs
+            </div>
+          </div>
+        </li>
+        
+        <li style="margin-bottom: 0.8rem">
+          <div style="line-height: 1.2">
+            <a href="https://github.com/vikv1/bicep-curl-form-analyzer"> Portfolio Optimization - (done)</a>
+            <div style="
+                color: gray;
+                font-style: italic;
+                font-size: 0.85rem;
+                margin-top: 1px;
+              ">
+              real time feedback on your bicep curl form
+            </div>
+          </div>
+        </li>
+        
+        <li style="margin-bottom: 0.8rem">
+          <div style="line-height: 1.2">
+            <a href="https://github.com/vikv1/WallpaperApp"> Android Wallpaper Setter - (done)</a>
+            <div style="
+                color: gray;
+                font-style: italic;
+                font-size: 0.85rem;
+                margin-top: 1px;
+              ">
+              set your wallpaper and skip navigating to the system settings
+            </div>
+          </div>
+        </li>
+        
+        <li style="margin-bottom: 0.8rem">
+          <div style="line-height: 1.2">
+            <a href="https://github.com/vikv1/EET"> English Translator - (done)</a>
+            <div style="
+                color: gray;
+                font-style: italic;
+                font-size: 0.85rem;
+                margin-top: 1px;
+              ">
+              translates english text into 32 different languages
+            </div>
+          </div>
+        </li>
+        
+        <li style="margin-bottom: 0.8rem">
+          <div style="line-height: 1.2">
+            <a href="https://github.com/vikv1/TheWeatherCatcher"> Weather Catcher - (done)</a>
+            <div style="
+                color: gray;
+                font-style: italic;
+                font-size: 0.85rem;
+                margin-top: 1px;
+              ">
+              my first ever project, uses (spams) APIs to determine various weather statistics
+            </div>
+          </div>
+        </li>
+        
+      </ul>
+    </div>
   </div>
 </div>
 
