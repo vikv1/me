@@ -1,1 +1,1 @@
-Sitemap: https://vikv1.github.io/me/sitemap.xml
+Sitemap: https://vikv.dev/sitemap.xml

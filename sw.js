@@ -1,8 +1,8 @@
-const version = '20250713043540';
+const version = '20250713045021';
 const cacheName = `static::${version}`;
 
 const buildContentBlob = () => {
-  return ["/me/academics/2025/06/15/lin_alg_1/","/me/career/reflections/2025/06/13/capital_one/","/me/general/reflections/2025/06/13/acting/","/me/categories/","/me/elements/","/me/blog/","/me/","/me/manifest.json","/me/offline/","/me/assets/search.json","/me/search/","/me/assets/styles.css","/me/thanks/","/me/redirects.json","/me/sitemap.xml","/me/robots.txt","/me/blog/page2/","/me/feed.xml","/me/assets/styles.css.map","/me/assets/logos/logo.svg", "/me/assets/default-offline-image.png", "/me/assets/scripts/fetch.js"
+  return ["/academics/2025/06/15/lin_alg_1/","/career/reflections/2025/06/13/capital_one/","/general/reflections/2025/06/13/acting/","/categories/","/elements/","/blog/","/","/manifest.json","/offline/","/assets/search.json","/search/","/assets/styles.css","/thanks/","/redirects.json","/sitemap.xml","/robots.txt","/blog/page2/","/feed.xml","/assets/styles.css.map","/assets/logos/logo.svg", "/assets/default-offline-image.png", "/assets/scripts/fetch.js"
   ]
 }
 
@@ -60,7 +60,7 @@ self.addEventListener("fetch", event => {
 
   if (request.url.match(/\.(jpe?g|png|gif|svg)$/)) {
     // If url requested is an image and isn't cached, return default offline image
-    offlineAsset = "/me/assets/default-offline-image.png";
+    offlineAsset = "/assets/default-offline-image.png";
   }
 
   // For all urls request image from network, then fallback to cache, then fallback to offline page
