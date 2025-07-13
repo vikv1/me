@@ -208,7 +208,9 @@ layout: default
         {% for proj in site.projects %}
         <li style="margin-bottom: 0.8rem">
           <div style="line-height: 1.2">
-            <a href="{{ proj.link }}"> {{ proj.name }} - ({{ proj.status }})</a>
+            {% if proj.link %}
+            <a href="{{ proj.link }}">{{ proj.name }} - ({{ proj.status }})</a>
+            {% else %} {{ proj.name }} - ({{ proj.status }}) {% endif %}
             <div
               style="
                 color: gray;
