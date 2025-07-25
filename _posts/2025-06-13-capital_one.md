@@ -5,6 +5,7 @@ categories:
 - Career
 - Reflections
 blurb: first big industry experience
+date: 2025-07-13
 ---
 
 Starting week 7 of my internship here, I think I've learned a lot, not only in terms of how engineering works at large companies, but also about myself. This is the first time I've been away from home on my own for any extended period of time. 
